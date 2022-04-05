@@ -1,21 +1,24 @@
 <!doctype html>
 <html>
     <head>
-        <title>Yesenia's Project Alpha</title>
+        <title>Chic Events</title>
     </head>
     <body>
         <header>
             <nav>
                 <ul>
-                    {% if request.user.is_authenticated %}
-                        <li><a href="{% url "show_my_tasks" %}">My tasks</a></li>
-                        <li><a href="{% url "list_events" %}">My events</a></li>
-                        <li><a href="{% url "logout" %}">Logout</a></li>
-                    {% else %}
-                        <li><a href="{% url "login" %}">Login</a></li>
-                        <li><a href="{% url "signup" %}">Signup</a></li>
-                    {% endif %}
+                    <li><a href="{% url "home" %}">Home</a></li>
+                    <li><a href="{% url "about" %}">About</a></li>
+                    <li><a href="{% url "list_services" %}">Services</a></li>
+                    <li><a href="{% url "book_now" %}">Book Now</a></li>
+                    <li><a href="{% url "contact_us" %}">Contact Us</a></li>
+                    {% comment %} <li><a href="{% url "logout" %}">Logout</a></li>
+                    <li><a href="{% url "login" %}">Login</a></li>
+                    <li><a href="{% url "signup" %}">Signup</a></li> {% endcomment %}
                 </ul>
+                <div>
+                    <h1>Chic Events</h1>
+                </div>
             </nav>
         </header>
         {% block content %}

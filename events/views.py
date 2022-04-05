@@ -8,6 +8,22 @@ from events.models import Event
 
 
 # Create your views here.
+class HomeListView(ListView):
+    model = Event
+    template_name = "events/home.html"
+    context_object_name = "home_list"
+
+    def get_queryset(self):
+        return Event.objects.filter(members=self.request.user)
+
+class AboutListView(ListView):
+    model = Event
+    template_name = "events/about.html"
+    context_object_name = "about"
+
+    def get_queryset(self):
+        return Event.objects.filter(members=self.request.user)
+
 class EventListView(LoginRequiredMixin, ListView):
     model = Event
     template_name = "events/list.html"
@@ -16,6 +32,13 @@ class EventListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Event.objects.filter(members=self.request.user)
 
+class ContactUsListView(ListView):
+    model = Event
+    template_name = "events/contact.html"
+    context_object_name = "contact_us"
+
+    def get_queryset(self):
+        return Event.objects.filter(members=self.request.user)
 
 class EventDetailView(LoginRequiredMixin, DetailView):
     model = Event
@@ -23,11 +46,19 @@ class EventDetailView(LoginRequiredMixin, DetailView):
     context_object_name = "event_detail"
 
 
-class EventCreateView(LoginRequiredMixin, CreateView):
+class BookNowCreateView(CreateView):
     model = Event
-    template_name = "events/create.html"
+    template_name = "events/book.html"
     fields = ["name", "description", "members"]
-    context_object_name = "event_create"
+    context_object_name = "book_now"
 
     def get_success_url(self):
-        return reverse_lazy("show_event", args=[self.object.id])
+        return reverse_lazy("successful_booking", args=[self.object.id])
+
+class SuccessListView(LoginRequiredMixin, ListView):
+    model = Event
+    template_name = "events/success.html"
+    context_object_name = "successful_booking"
+
+    def get_queryset(self):
+        return Event.objects.filter(members=self.request.user)

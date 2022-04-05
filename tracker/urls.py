@@ -19,10 +19,10 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("events/", include("events.urls")),
+    path("", include("events.urls")),
     path(
         "",
-        RedirectView.as_view(url=reverse_lazy("list_events")),
+        RedirectView.as_view(url=reverse_lazy("home")),
         name="home",
     ),
     path("accounts/", include("accounts.urls")),
