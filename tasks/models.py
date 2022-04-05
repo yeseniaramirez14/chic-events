@@ -1,5 +1,5 @@
 from django.db import models
-from projects.models import Project
+from events.models import Event
 from django.conf import settings
 
 USER_MODEL = settings.AUTH_USER_MODEL
@@ -11,8 +11,8 @@ class Task(models.Model):
     start_date = models.DateTimeField()
     due_date = models.DateTimeField()
     is_completed = models.BooleanField(default=False)
-    project = models.ForeignKey(
-        Project, related_name="tasks", on_delete=models.CASCADE
+    event = models.ForeignKey(
+        Event, related_name="tasks", on_delete=models.CASCADE
     )
     assignee = models.ForeignKey(
         USER_MODEL, null=True, related_name="tasks", on_delete=models.SET_NULL

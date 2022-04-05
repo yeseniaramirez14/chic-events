@@ -2,7 +2,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from projects.models import Project
+from events.models import Event
 
 from tasks.models import Task
 
@@ -11,14 +11,14 @@ from tasks.models import Task
 class TaskCreateView(LoginRequiredMixin, CreateView):
     model = Task
     template_name = "tasks/create.html"
-    fields = ["name", "start_date", "due_date", "project", "assignee"]
+    fields = ["name", "start_date", "due_date", "event", "assignee"]
 
     def get_success_url(self):
-        return reverse_lazy("show_project", args=[self.object.project_id])
+        return reverse_lazy("show_event", args=[self.object.event_id])
 
 
 class TaskListView(LoginRequiredMixin, ListView):
-    model = Project
+    model = Event
     template_name = "tasks/list.html"
     context_object_name = "list_of_tasks"
 

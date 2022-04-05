@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
-    "projects.apps.ProjectsConfig",
+    "events.apps.EventsConfig",
     "tasks.apps.TasksConfig",
     "markdownify.apps.MarkdownifyConfig",
     "django.contrib.admin",

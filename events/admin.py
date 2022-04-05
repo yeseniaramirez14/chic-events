@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from events.models import Project
+from events.models import Event
 
 
 # Register your models here.
-class ProjectAdmin(admin.ModelAdmin):
+class EventAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(Project, ProjectAdmin)
+admin.site.register(Event, EventAdmin)
