@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
+{% block title %}Book with Chic Events{% endblock title %}
+
 {% block content %}
     <main>
         <div>
             <h1>Create a new project</h1>
-            <form method="POST">
+            <form action="" method="POST" novalidate>
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Create</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </main>
