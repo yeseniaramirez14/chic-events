@@ -1,7 +1,11 @@
 from django import forms
 from django.http import HttpResponseRedirect 
 from django.shortcuts import render     
-from events.models import BookRequest, Contact
+from events.models import BookRequest, Contact, Event
+forms.DateInput.input_type="date"
+forms.TimeInput.input_type="time"
+
+
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -9,6 +13,7 @@ class ContactForm(forms.ModelForm):
         fields = "__all__"
 
 class BookRequestForm(forms.ModelForm):
+    package = forms.ModelMultipleChoiceField(queryset=Event.objects.all(), widget=forms.RadioSelect)
     class Meta:
         model = BookRequest
         fields = "__all__"

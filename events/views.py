@@ -82,11 +82,11 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/message-sent/')
+            submitted = True
+
     else: 
         form = ContactForm()
-        if 'submitted' in request.GET:
-            submitted = True
+
     return render(
         request, 
         'events/contact.html', 
@@ -102,11 +102,10 @@ def book_request(request):
         form = BookRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/request-sent/')
+            submitted = True
     else:
         form = BookRequestForm()
-        if 'submitted' in request.GET:
-            submitted = True
+
     return render(
         request, 
         'events/book.html',
