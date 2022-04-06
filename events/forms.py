@@ -1,13 +1,17 @@
 from django import forms
 from django.http import HttpResponseRedirect 
 from django.shortcuts import render     
-from events.models import Contact
+from events.models import BookRequest, Contact
 
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = "__all__"
 
+class BookRequestForm(forms.ModelForm):
+    class Meta:
+        model = BookRequest
+        fields = "__all__"
 
 # class ContactForm(forms.Form):
 #     first_name = forms.CharField(max_length=100, label="First Name")

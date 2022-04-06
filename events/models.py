@@ -33,3 +33,21 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'From {self.first_name}: {self.email}'
+
+class BookRequest(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    date = models.DateField()
+    time = models.TimeField()
+    phone_number = models.CharField(max_length=20)
+    guests = models.PositiveSmallIntegerField()
+    description = models.TextField()
+    package = models.ForeignKey(
+        "Event",
+        related_name = "package_type",
+        on_delete = models.PROTECT
+    )
+
+    def __str__(self):
+        return f'Request from {self.first_name} for {self.date}'

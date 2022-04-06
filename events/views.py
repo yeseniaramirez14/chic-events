@@ -6,8 +6,8 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect 
 from django.shortcuts import render   
 
-from events.models import Event
-from events.forms import ContactForm
+from events.models import Event, BookRequest
+from events.forms import BookRequestForm, ContactForm
 
 
 # Create your views here.
@@ -49,14 +49,14 @@ class EventDetailView(LoginRequiredMixin, DetailView):
     context_object_name = "event_detail"
 
 
-class BookNowCreateView(CreateView):
-    model = Event
-    template_name = "events/book.html"
-    fields = ["name", "description", "price", "members"]
-    context_object_name = "book_now"
+# class BookNowCreateView(CreateView):
+#     model = Event
+#     template_name = "events/book.html"
+#     fields = ["name", "description", "price", "members"]
+#     context_object_name = "book_now"
 
-    def get_success_url(self):
-        return reverse_lazy("successful_booking", args=[self.object.id])
+#     def get_success_url(self):
+#         return reverse_lazy("successful_booking", args=[self.object.id])
 
 class SuccessListView(LoginRequiredMixin, ListView):
     model = Event
@@ -70,7 +70,7 @@ class SuccessListView(LoginRequiredMixin, ListView):
 class ContactSuccessListView(LoginRequiredMixin, ListView):
     model = Event
     template_name = "events/contact_success.html"
-    context_object_name = "successful_contact"
+    context_object_name = "message_sent"
 
 
 
@@ -82,7 +82,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/message_sent')
+            return HttpResponseRedirect('/message-sent/')
     else: 
         form = ContactForm()
         if 'submitted' in request.GET:
@@ -90,5 +90,25 @@ def contact(request):
     return render(
         request, 
         'events/contact.html', 
+        {'form': form, 'submitted': submitted}
+    )
+
+
+#### Book Request Page 
+
+def book_request(request):
+    submitted = False
+    if request.method == 'POST':
+        form = BookRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/request-sent/')
+    else:
+        form = BookRequestForm()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(
+        request, 
+        'events/book.html',
         {'form': form, 'submitted': submitted}
     )
