@@ -4,43 +4,24 @@
 
 {% block content %}
     <main>
-        <h1>Book Now</h1>
-        {% if submitted %}
-            <p>Your request was submitted successfully. Thank you.</p>
-        {% else %}
-            <div>
-                <form action="" method="post" novalidate>
-                    <table>            
-                        {{ form.as_table }}            
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td><button class="button">Submit</button></td>
-                            </tr>
-                    </table>
-                    {% csrf_token %}
-                </form>        
-        {% endif %}
-            </div>
-{% comment %}             
-            <input type="text" id="name" name="name"
-            <input type="date" name="date" required="" id="id_date"> {% endcomment %}
-
-        {% comment %} <div>
+        <div class=contact-form>
             <h1>Book Now</h1>
             {% if submitted %}
-                <p> Your request was submitted successfully. Thank you. </p>
+                <p>Your request was submitted successfully. Thank you.</p>
             {% else %}
-                <form action="" method="POST" novalidate>
-                    <table>
-                        {{ form.as_table }}
-                            <tr>
-                                <td>%nbsp;</td>
-                                <td><button>Submit</button></td>
-                            </tr>
-                    </table>
-                    {% csrf_token %}
-                </form>
+                <div>
+                    <form action="" method="post" novalidate>
+                        <table>            
+                            {{ form.as_table }}            
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td><button class="button">Submit</button></td>
+                                </tr>
+                        </table>
+                        {% csrf_token %}
+                    </form>        
             {% endif %}
-        </div> {% endcomment %}
+                </div>
+        </div>
     </main>
 {% endblock content %}

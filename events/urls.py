@@ -4,10 +4,7 @@ from events.views import (
     EventDetailView,
     EventListView,
     HomeListView,
-    ContactUsListView,
-    SuccessListView,
     AboutListView,
-    ContactSuccessListView,
     book_request,
     contact
 )
@@ -20,8 +17,5 @@ urlpatterns = [
     path("about/", AboutListView.as_view(), name="about"),
     path("contactus/", contact, name="contact_us"),
     path("book-now/", book_request, name="book_now"),
-    path("request-sent/", SuccessListView.as_view(), name="request_sent"),
-    path("message-sent/", ContactSuccessListView.as_view(), name="message_sent"),
-
 
 ]

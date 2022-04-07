@@ -49,30 +49,6 @@ class EventDetailView(LoginRequiredMixin, DetailView):
     context_object_name = "event_detail"
 
 
-# class BookNowCreateView(CreateView):
-#     model = Event
-#     template_name = "events/book.html"
-#     fields = ["name", "description", "price", "members"]
-#     context_object_name = "book_now"
-
-#     def get_success_url(self):
-#         return reverse_lazy("successful_booking", args=[self.object.id])
-
-class SuccessListView(LoginRequiredMixin, ListView):
-    model = Event
-    template_name = "events/booked_success.html"
-    context_object_name = "successful_booking"
-
-    def get_queryset(self):
-        return Event.objects.filter(members=self.request.user)
-
-
-class ContactSuccessListView(LoginRequiredMixin, ListView):
-    model = Event
-    template_name = "events/contact_success.html"
-    context_object_name = "message_sent"
-
-
 
 #### Contact Us Page
 

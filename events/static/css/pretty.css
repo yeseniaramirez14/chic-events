@@ -1,0 +1,137 @@
+html, body {
+    background-color: white;
+    margin: 0;
+    font-family: 'Gilda Display';
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 1em;
+    padding: 5px 5%;    
+}
+
+th {
+    text-align: right;
+}
+
+input {
+    font-family: 'Gilda Display';
+    accent-color: #ffddd2;
+    padding: 5px;
+    margin: 3px;
+    width: 96%;
+    font-size: 16px;
+}
+
+input[type="radio" i] {
+    width: auto;
+}
+
+textarea {
+    font-family: 'Gilda Display';
+    width: 100%;
+    padding: 5px;
+    margin: 3px;
+    width: 96.5%;
+}
+label {
+    font-size: 18px;
+}
+
+button.button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: black;
+    padding: 0.5em 1em;
+    margin: .5em 0;
+    width: 101.5%;
+    font-family: 'Gilda Display';
+  }
+  
+button.button:hover {
+    background-color: white;
+    border-color: #e99bc4;
+    color: #e99bc4;
+  }
+  
+button.button:active {
+    background-color: #c93e91;
+  }
+
+table {
+    border-collapse: collapse;
+    max-width: auto;
+    min-width: auto;
+    margin: auto;   
+}
+
+.contact-form > h1{
+    text-align: center;
+}
+
+.page-titles {
+    font-family: 'Gilda Display';
+}
+
+.paragraphs {
+    font-family: 'Gilda Display';
+}
+
+.bg-img {
+    /* The image used */
+    background-image: url(https://i.ibb.co/GnYTjYw/Chic-Events-2.png);
+    min-height: 230px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    /* Needed to position the navbar */
+    position: relative;
+  }
+  
+  /* Position the navbar container inside the image */
+.container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    width: 100%;
+    display: inline-block;
+
+  }
+  
+  
+  /* Navbar links */
+  .topnav a {
+    display: inline-block;
+    float: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 0;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    font-family: 'Gilda Display';
+  }
+  
+  .topnav a:hover {
+    color: #f28482;
+    font-size: 120%;
+  }
+

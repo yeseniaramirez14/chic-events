@@ -4,7 +4,7 @@
 
 {% block content %}
     <main>
-        <div>
+        <div class=contact-form>
             <h1>Have a question?</h1>
             {% if submitted %}
                 <p> Your message was submitted successfully. Thank you. </p>
@@ -15,7 +15,7 @@
                         {{ form.as_table }}
                             <tr>
                                 <td>&nbsp;</td>
-                                <td><input type="submit" value="Submit"></td>
+                                <td><button class="button">Submit</button></td>
                             </tr>
                     </table>
                 </form>

@@ -9,7 +9,6 @@ class Event(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     price = models.CharField(max_length=50)
-    members = models.ManyToManyField(USER_MODEL, related_name="events")
 
     def __str__(self):
         return self.name
