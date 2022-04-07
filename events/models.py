@@ -8,6 +8,7 @@ USER_MODEL = settings.AUTH_USER_MODEL
 class Event(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
+    image = models.URLField(null=True, blank=True)
     price = models.CharField(max_length=50)
 
     def __str__(self):

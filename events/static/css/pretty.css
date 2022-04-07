@@ -128,23 +128,38 @@ h1 {
   .nav-links {
     list-style: none;
     display: inline-block;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     width: 100%;
     font-family: 'Gilda Display';
   }
   
+  ul {
+      padding-inline-start: 0;
+  }
+
   .topnav a:hover {
     color: #f28482;
     font-size: 120%;
   }
 
-  /* about us page */
-.about-pic {
-    margin: 0;
+  .home-pic {
+    margin: auto;
     padding: 0;
     max-width: 100%;
     width: 50%;
     height: auto;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  /* about us page */
+.about-pic {
+    margin: auto;
+    padding: 0;
+    max-width: 100%;
+    width: auto;
     float: right;
 }
 
@@ -154,6 +169,12 @@ h1 {
     max-width: 100%;
     width: 50%;
     height: auto;
+    float: right;
+
+}
+
+.success {
+    text-align: center;
 }
 
 .birthday {
@@ -170,4 +191,42 @@ h1 {
     max-width: 100%;
     width: 50%;
     height: auto;
+}
+
+.packages {
+    display: grid;    
+    grid-template-columns: 1.5fr 2fr;
+    align-items: center;
+    grid-row: 1 span 4;
+    margin-right: auto;
+    margin-left: auto
+
+}
+    /* align-items: center;
+    font-size: 15px;    
+    column-gap: 5px;
+    padding: 40px;
+    margin: 30px;
+} */
+
+.packages-pics {
+    /* object-fit: cover;    
+    margin-left: auto;
+    margin-right: auto; */
+    float: right;
+    grid-row: 1 span 5;
+    align-items: center;
+    width: 75%;
+    max-height: 300px;
+
+}
+
+.packages-pics > img {
+    /* object-fit: cover;    
+    margin-left: auto;
+    margin-right: auto; */
+    float: right;
+    grid-row: 1 span 5;
+    width: 75%;
+
 }
