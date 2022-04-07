@@ -1,12 +1,9 @@
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
-from django.urls import reverse_lazy
-from django.http import HttpResponseRedirect 
 from django.shortcuts import render   
 
-from events.models import Event, BookRequest
+from events.models import Event
 from events.forms import BookRequestForm, ContactForm
 
 
@@ -16,32 +13,25 @@ class HomeListView(ListView):
     template_name = "events/home.html"
     context_object_name = "home_list"
 
-    def get_queryset(self):
-        return Event.objects.filter(members=self.request.user)
 
 class AboutListView(ListView):
     model = Event
     template_name = "events/about.html"
     context_object_name = "about"
 
-    def get_queryset(self):
-        return Event.objects.filter(members=self.request.user)
 
 class EventListView(LoginRequiredMixin, ListView):
     model = Event
     template_name = "events/packages.html"
     context_object_name = "event_list"
 
-    def get_queryset(self):
-        return Event.objects.filter(members=self.request.user)
 
 class ContactUsListView(ListView):
     model = Event
     template_name = "events/contact.html"
     context_object_name = "contact_us"
 
-    def get_queryset(self):
-        return Event.objects.filter(members=self.request.user)
+
 
 class EventDetailView(LoginRequiredMixin, DetailView):
     model = Event

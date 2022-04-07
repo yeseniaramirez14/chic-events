@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Packages | Chic Events {% endblock title %}
 
 {% block content %}
     <main>
         <div>
-            <h1>Event Packages</h1>
+            <h1 class=page-titles>Event Packages</h1>
             {% comment %} <p><a href="{% url 'create_event' %}">Create a new event</a></p> {% endcomment %}
             {% for event in event_list %}
                 <h2>{{ event.name }}</h3>
@@ -17,6 +18,11 @@
                     </ul>
                 <p><i>{{ event.price }}</i></p>
             {% endfor %}
+        </div>
+        <div>
+            <img class="picnic" src="{% static "images/picnic.jpg" %}" alt="chic picnic">
+            <img class="birthday" src="{% static "images/birthday.png" %}" alt="birthday party">
+            <img class="bach-party" src="{% static "images/bach_party.jpg" %}" alt="bachelorette picnic">
         </div>
     </main>
 {% endblock content %}
