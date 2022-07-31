@@ -20,7 +20,7 @@ class AboutListView(ListView):
     context_object_name = "about"
 
 
-class EventListView(LoginRequiredMixin, ListView):
+class EventListView(ListView):
     model = Event
     template_name = "events/packages.html"
     context_object_name = "event_list"
