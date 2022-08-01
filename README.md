@@ -1,8 +1,6 @@
 <h1 align="center">Welcome to Chic Events 👋</h1>
-<p>
-</p>
 
-> Chic Events is an event planning web application that allows a user to browse different event packages and book a reservation. If the user has any questions, there is a contact us form available. 
+Chic Events is an event planning web application that allows a user to browse different event packages and book a reservation. If the user has any questions, there is a contact us form available. 
 
 ## Getting Started
 1. Git fork and clone this repo and navigate into ```/chic-events``` directory

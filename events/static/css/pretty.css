@@ -100,12 +100,12 @@ h1 {
   }
   
   /* Position the navbar container inside the image */
-.container {
+.container-nav {
     position: absolute;
     top: 0;
     width: 100%;
     text-align: center;
-    margin: 0px;
+    margin: 20px 0;
     width: 100%;
     display: inline-block;
   }
@@ -128,7 +128,6 @@ h1 {
   .nav-links {
     list-style: none;
     display: inline-block;
-    /* white-space: nowrap; */
     width: 100%;
     font-family: 'Gilda Display';
   }
@@ -171,70 +170,19 @@ h1 {
     float: right;
 }
 
-.picnic {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    width: 50%;
-    height: auto;
-    float: right;
-
-}
-
 .success {
     text-align: center;
 }
 
-.birthday {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    width: 50%;
-    height: auto;
+.package-row {
+    height: 100px;
+    padding: 20px;
+
 }
 
-.bach-party {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    width: 50%;
-    height: auto;
-}
-
-.packages {
-    display: grid;    
-    grid-template-columns: 1.5fr 2fr;
+.package-img {
     align-items: center;
-    grid-row: 1 span 4;
-    margin-right: auto;
-    margin-left: auto
-
-}
-    /* align-items: center;
-    font-size: 15px;    
-    column-gap: 5px;
-    padding: 40px;
-    margin: 30px;
-} */
-
-.packages-pics {
-    /* object-fit: cover;    
-    margin-left: auto;
-    margin-right: auto; */
-    float: right;
-    grid-row: 1 span 5;
-    align-items: center;
-    width: 75%;
-    max-height: 300px;
-
-}
-
-.packages-pics > img {
-    /* object-fit: cover;    
-    margin-left: auto;
-    margin-right: auto; */
-    float: right;
-    grid-row: 1 span 5;
-    width: 75%;
-
+    height: 350px;
+    object-fit: contain;
+    float: center;
 }
