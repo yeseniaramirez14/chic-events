@@ -66,6 +66,6 @@ Admin access on [http://localhost:3000/admin](http://localhost:3000/admin)
 
 👤 **Yesenia Ramirez**
 
-* Portfolio website: [yeseniar.dev](https://www.yeseniar.dev)
+* Portfolio Website: [yeseniar.dev](https://www.yeseniar.dev)
 * Github: [@yeseniaramirez14](https://github.com/yeseniaramirez14)
 * LinkedIn: [@yeseniaramirez14](https://linkedin.com/in/yeseniaramirez14)
