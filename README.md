@@ -15,6 +15,9 @@
 1. Git fork and clone this repo and navigate into ```/chic-events``` directory
 ```sh
 cd chic-events
+```
+2. Create a virtual environment 
+```sh
 python -m venv .venv
 ```
 3. Activate the environment
